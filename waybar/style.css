@@ -81,19 +81,19 @@ button:hover {
 #battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
+#custom-gpu,
+#custom-mouse_battery,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#custom-power,
 #power-profiles-daemon,
-#mpd {
+#mpd,
+#language {
     padding: 0 10px;
     color: #ffffff;
 }
@@ -150,7 +150,7 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
+    background-color: #d25555;
     color: #ffffff;
 }
 
@@ -164,12 +164,21 @@ button:hover {
     color: #000000;
 }
 
-label:focus {
-    background-color: #000000;
-}
-
 #cpu {
     background-color: #2ecc71;
+    color: #000000;
+}
+#custom-gpu {
+    background-color: #cc2e2e;
+    color: #000000;
+}
+
+#custom-mouse_battery {
+    background-color: #848484;
+    color: #000000;
+}
+#custom-power {
+    background-color: #7043a4;
     color: #000000;
 }
 
@@ -177,12 +186,12 @@ label:focus {
     background-color: #9b59b6;
 }
 
-#disk {
-    background-color: #964B00;
+#temperature {
+    background-color: #f0932b;
 }
 
-#backlight {
-    background-color: #90b1b1;
+#temperature.critical {
+    background-color: #eb4d4b;
 }
 
 #network {
@@ -203,15 +212,6 @@ label:focus {
     color: #2a5c45;
 }
 
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
 #custom-media {
     background-color: #66cc99;
     color: #2a5c45;
@@ -224,27 +224,6 @@ label:focus {
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
 #idle_inhibitor {
@@ -273,30 +252,6 @@ label:focus {
     background-color: #51a37a;
 }
 
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 #scratchpad {
     background: rgba(0, 0, 0, 0.2);
 }
@@ -305,23 +260,10 @@ label:focus {
 	background-color: transparent;
 }
 
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
+#language {
+    background: #00b093;
+    color: #740864;
     padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
+    margin: 0 5px;
+    min-width: 16px;
 }

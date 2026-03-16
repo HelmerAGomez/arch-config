@@ -3,8 +3,6 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
         "custom/media"
     ],
 
@@ -17,16 +15,14 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "cpu",
+        "custom/gpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
+        // "temperature",
+        "temperature#cpu",
+        "temperature#gpu",
         "hyprland/language",
         "custom/mouse_battery",
-        "battery",
-        "battery#bat2",
         "clock",
         "tray",
         "custom/power"
@@ -53,37 +49,9 @@
             "default": "{}"
         }
     },
-
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-
     "hyprland/window": {
         "format": "{title} ({class})",
         "tooltip": true
-    },
-
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {"on": " "},
-        "random-icons": {"off": "<span color=\"#f53c3c\"></span> ", "on": " "},
-        "repeat-icons": {"on": " "},
-        "single-icons": {"on": "1 "},
-        "state-icons": {"paused": "", "playing": ""},
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
     "idle_inhibitor": {
@@ -99,64 +67,45 @@
     },
 
     "clock": {
+        "format": "{:%I:%M %p}",  // 12-hour clock with AM/PM
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
 
     "cpu": {
-        "format": "{usage}% ",
+        "format": "CPU: {usage}% ",
+        "tooltip": false
+    },
+    "custom/gpu": {
+        "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
+        "interval": 5,
+        "format": "GPU: {}% ",
         "tooltip": false
     },
 
     "memory": {
-        "format": "{}% "
+        "format": "{used:.1f} / {total:.1f} GB "
     },
-
-    "temperature": {
+    "temperature#cpu": {
         "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "CPU: {temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input"
     },
 
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["","","","","","","","",""]
+    "temperature#gpu": {
+        "format": "GPU: {temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "critical-threshold": 85,
+        "hwmon-path": "/sys/class/hwmon/hwmon3/in0_input"
     },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["","","","",""]
-    },
-
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
+    
 
     "custom/mouse_battery": {
         "exec": "upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_0 | grep percentage | awk '{print \" \"$2}'",
         "interval": 60,
         "tooltip": true,
         "on-click": "piper"
-    },
-
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
-        }
     },
 
     "network": {
@@ -187,23 +136,23 @@
         "on-click": "pavucontrol"
     },
 
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-    },
+    // "custom/media": {
+    //     "format": "{icon} {text}",
+    //     "return-type": "json",
+    //     "max-length": 40,
+    //     "format-icons": {
+    //         "spotify": "",
+    //         "default": "🎜"
+    //     },
+    //     "escape": true,
+    //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+    // },
 
     "custom/power": {
-        "format": "⏻ ",
+        "format": "",
         "tooltip": false,
         "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        //"menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
             "shutdown": "shutdown",
             "reboot": "reboot",
