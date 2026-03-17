@@ -1,6 +1,0 @@
-<menu>
-    <item label="Shutdown" exec="systemctl poweroff"/>
-    <item label="Reboot" exec="systemctl reboot"/>
-    <item label="Suspend" exec="systemctl suspend"/>
-    <item label="Hibernate" exec="systemctl hibernate"/>
-</menu>
