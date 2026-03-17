@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=My Minimal Login
+Comment=Clean, centered login for Hyprland users
+Version=1.0
+Author=me
+Type=sddm-theme
+MainScript=Main.qml
+ConfigFile=theme.conf
