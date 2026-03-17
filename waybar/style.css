@@ -86,6 +86,7 @@ button:hover {
 #pulseaudio,
 #custom-gpu,
 #custom-mouse_battery,
+#custom-reboot_windows,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -94,6 +95,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd,
 #language {
+    border-radius: 6px;
     padding: 0 10px;
     color: #ffffff;
 }
@@ -177,9 +179,18 @@ button:hover {
     background-color: #848484;
     color: #000000;
 }
+#custom-reboot_windows {
+    background-color: #ffffff;
+    color: #000000;
+
+}
 #custom-power {
     background-color: #7043a4;
     color: #000000;
+}
+#custom-power:hover {
+    background-color: #8a5ec2;
+    color: #ffffff;
 }
 
 #memory {
@@ -263,7 +274,5 @@ button:hover {
 #language {
     background: #00b093;
     color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
     min-width: 16px;
 }

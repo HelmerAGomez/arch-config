@@ -3,11 +3,11 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
+        "custom/media",
+        "hyprland/window"
     ],
 
     "modules-center": [
-        "hyprland/window"
     ],
 
     "modules-right": [
@@ -25,6 +25,7 @@
         "custom/mouse_battery",
         "clock",
         "tray",
+        "custom/reboot_windows",
         "custom/power"
     ],
 
@@ -63,6 +64,7 @@
     },
 
     "tray": {
+        "show-passive-items": true,
         "spacing": 10
     },
 
@@ -97,7 +99,7 @@
         "format": "GPU: {temperatureC}°C {icon}",
         "format-icons": ["", "", ""],
         "critical-threshold": 85,
-        "hwmon-path": "/sys/class/hwmon/hwmon3/in0_input"
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input"
     },
     
 
@@ -147,17 +149,17 @@
     //     "escape": true,
     //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     // },
+    "custom/reboot_windows": {
+        "on-click": "$HOME/.config/Scripts/reboot-windows",
+        "format": ""
+    },
 
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "menu": "on-click",
-        //"menu-file": "$HOME/.config/waybar/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+        // "on-click": "systemctl poweroff"
+        "on-click": "$HOME/.config/rofi/powermenu.sh"
+
+
     }
 }
