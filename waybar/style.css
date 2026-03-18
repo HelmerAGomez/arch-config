@@ -179,9 +179,16 @@ button:hover {
     background-color: #848484;
     color: #000000;
 }
+#custom-mouse_battery:hover {
+    background-color: #414141;
+}
 #custom-reboot_windows {
     background-color: #ffffff;
     color: #000000;
+
+}
+#custom-reboot_windows:hover {
+    background-color: #bbbbbb;
 
 }
 #custom-power {

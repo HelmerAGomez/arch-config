@@ -1,71 +1,77 @@
-amd-ucode
-ark
-base
-bluez
-bluez-utils
-code
-dolphin
-dunst
-efibootmgr
-fastfetch
-feh
-firefox
-git
-grim
-gst-plugin-pipewire
-gwenview
-htop
-hyprland
-hyprlauncher
-hyprpaper
-imagemagick
-intel-media-driver
-iwd
-kdegraphics-thumbnailers
-kitty
-libpulse
-libratbag
-libva-intel-driver
-linux
-linux-firmware
-nano
-network-manager-applet
-networkmanager
-nodejs
-npm
-pavucontrol
-piper
-pipewire
-pipewire-alsa
-pipewire-jack
-pipewire-pulse
-polkit-kde-agent
-qt5-wayland
-qt6-wayland
-sbctl
-sddm
-slurp
-smartmontools
-sudo
-ttf-jetbrains-mono-nerd
-uwsm
-vim
-vulkan-intel
-vulkan-nouveau
-vulkan-radeon
-waybar
-wget
-wireless_tools
-wireplumber
-wl-clipboard
-woff2-font-awesome
-wofi
-wpa_supplicant
-xdg-desktop-portal-hyprland
-xdg-utils
-xf86-video-amdgpu
-xf86-video-ati
-xf86-video-nouveau
-xorg-server
-xorg-xinit
-zram-generator
+amd-ucode 20260309-1
+ark 25.12.3-1
+base 3-3
+blender 17:5.0.1-8
+bluez 5.86-4
+bluez-utils 5.86-4
+code 1.111.0-2
+dolphin 25.12.3-1
+dunst 1.13.1-1
+efibootmgr 18-3
+fastfetch 2.60.0-1
+firefox 148.0.2-1
+git 2.53.0-1
+gparted 1.8.0-1
+grim 1.5.0-2
+gst-plugin-pipewire 1:1.6.2-1
+gwenview 25.12.3-1
+hip-runtime-amd 7.2.0-1
+hiprt 3.1.0.cb09c56-2
+htop 3.4.1-1
+hyprland 0.54.2-1
+hyprlauncher 0.1.5-2
+hyprpaper 0.8.3-2
+hyprshot 1.3.0-4
+imagemagick 7.1.2.17-1
+intel-media-driver 25.4.6-1
+iwd 3.12-1
+kdegraphics-thumbnailers 25.12.3-1
+kitty 0.46.1-1
+libpulse 17.0+r98+gb096704c0-1
+libratbag 0.18-1
+libva-intel-driver 2.4.1-6
+linux 6.19.8.arch1-1
+linux-firmware 20260309-1
+nano 8.7.1-1
+network-manager-applet 1.36.0-1
+networkmanager 1.56.0-1
+nodejs 25.8.1-1
+npm 11.11.1-1
+pavucontrol 1:6.2-1
+piper 0.8-3
+pipewire 1:1.6.2-1
+pipewire-alsa 1:1.6.2-1
+pipewire-jack 1:1.6.2-1
+pipewire-pulse 1:1.6.2-1
+polkit-kde-agent 6.6.2-1
+qt5-graphicaleffects 5.15.18-1
+qt5-quickcontrols2 5.15.18+kde+r5-1
+qt5-wayland 5.15.18+kde+r55-1
+qt6-wayland 6.10.2-1
+rofi 2.0.0-1
+sbctl 0.18-1
+sddm 0.21.0-6
+slurp 1.5.0-1
+smartmontools 7.5-1
+sudo 1.9.17.p2-2
+ttf-jetbrains-mono-nerd 3.4.0-2
+uwsm 0.26.4-1
+vim 9.2.0081-1
+vulkan-intel 1:26.0.2-1
+vulkan-nouveau 1:26.0.2-1
+vulkan-radeon 1:26.0.2-1
+waybar 0.15.0-2
+wget 1.25.0-3
+wireless_tools 30.pre9-5
+wireplumber 0.5.13-1
+wl-clipboard 1:2.2.1-3
+woff2-font-awesome 7.2.0-1
+wpa_supplicant 2:2.11-5
+xdg-desktop-portal-hyprland 1.3.11-3
+xdg-utils 1.2.1-2
+xf86-video-amdgpu 25.0.0-1
+xf86-video-ati 1:22.0.0-2
+xf86-video-nouveau 1.0.18-1
+xorg-server 21.1.21-1
+xorg-xinit 1.4.4-1
+zram-generator 1.2.1-1
