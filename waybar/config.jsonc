@@ -14,7 +14,7 @@
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
-        "network",
+        // "network",
         "cpu",
         "custom/gpu",
         "memory",
@@ -51,7 +51,7 @@
         }
     },
     "hyprland/window": {
-        "format": "{title} ({class})",
+        "format": "{title} [{class}]",
         "tooltip": true
     },
 
@@ -102,14 +102,12 @@
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input"
     },
     
-
     "custom/mouse_battery": {
-        "exec": "upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_0 | grep percentage | awk '{print \" \"$2}'",
+        "exec": "solaar show all | awk '/Battery:/ {print \"🖱️ \"$2; exit}'",
         "interval": 60,
         "tooltip": true,
         "on-click": "piper"
     },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -150,10 +148,9 @@
     //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     // },
     "custom/reboot_windows": {
-        "on-click": "$HOME/.config/Scripts/reboot-windows",
+        "on-click": "sudo efibootmgr -n 0000 && systemctl reboot",
         "format": ""
     },
-
     "custom/power": {
         "format": "",
         "tooltip": false,
